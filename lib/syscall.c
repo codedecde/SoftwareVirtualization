@@ -117,3 +117,13 @@ sys_ipc_recv(void *dstva)
 	return syscall(SYS_ipc_recv, 1, (uint32_t)dstva, 0, 0, 0, 0);
 }
 
+int
+sys_make_gosenv(char* gb, char* gk, int ge)
+{
+	return syscall(SYS_make_gosenv, 0, (uint32_t)gb, (uint32_t)gk, ge, 0, 0);
+}
+
+int sys_launch_gosenv(int genvid)
+{
+	return syscall(SYS_launch_gosenv, 0, genvid, 0, 0, 0, 0);
+}

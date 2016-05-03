@@ -106,6 +106,9 @@ int	pageref(void *addr);
 envid_t	spawn(const char *program, const char **argv);
 envid_t	spawnl(const char *program, const char *arg0, ...);
 
+// vmm specific things.
+int sys_make_gosenv(char* gboot, char* gkern, int gentry);
+void sys_launch_gosenv(int genv);
 
 /* File open modes */
 #define	O_RDONLY	0x0000		/* open for reading only */

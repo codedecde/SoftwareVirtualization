@@ -557,7 +557,13 @@ syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, 
         return sys_ipc_recv((void *)a1);
 	case SYS_env_set_trapframe:
         return sys_env_set_trapframe(a1, (struct Trapframe *)a2);
-	default:
+    // VMM related syscalls... implemented in kern/vmm_syscall.c
+	case SYS_make_gosenv:
+        return sys_make_gosenv((char*)a1, (char*)a2, (int)a3,);
+    case SYS_launch_gosenv:
+        return sys_launch_gosenv((int)a1);
+    // End of VMM related syscalls.
+    default:
 		panic("syscall not implemented");
 		return -E_INVAL;
 	}
