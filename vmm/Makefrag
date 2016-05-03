@@ -1,0 +1,5 @@
+#TODO: compile the vmm wala GOS by calling make
+# Moving Guest boot img to different location.
+# Moving Guest kernel img to a different location.
+# Make it so that the filesystem recognizes both of these images.
+# Make it so that GNUmakefile calls this makefrag.
